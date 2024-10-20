@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Serve Larevel",
+            "type": "shell",
+            "command": "php artisan serve",
+            "options": {
+                "cwd": "${workspaceFolder}/marrige"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Serve Frontend",
+            "type": "shell",
+            "command": "npm start",
+            "options": {
+                "cwd": "${workspaceFolder}/marrige-front"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Start All",
+            "dependsOn": [
+                "Serve Larevel",
+                "Serve Frontend"
+            ]
+        }
+    ]
+}
